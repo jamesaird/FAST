@@ -1,0 +1,9 @@
+## SWIRE AGN templates - from Polletta
+# temp_num   temp_name
+##1 Sey18_template_norm.sed     
+##2 Sey2_template_norm.sed      
+1 SWIRE/Torus_template_norm.sed     
+2 SWIRE/TQSO1_template_norm.sed     
+3 SWIRE/BQSO1_template_norm.sed     
+4 SWIRE/QSO1_template_norm.sed      
+5 SWIRE/QSO2_template_norm.sed     

@@ -1,0 +1,10 @@
+Example of performing two-component (galaxy+AGN) fits.
+For details see Appendix A of Aird et al. 2017b, arXiv:1705.01132
+
+Also calculates lmass_mean, lsfr_mean by averaging chi^2 weighted templates
+See fast.param for additional parameters.
+
+This example photometry is a small subset of sources taken from the UltraVISTA K-band selected catalogs by Muzzin et al. 2013, available here:
+https://www.strw.leidenuniv.nl/galaxyevolution/ULTRAVISTA/Ultravista/Data_Products_Download.html
+
+

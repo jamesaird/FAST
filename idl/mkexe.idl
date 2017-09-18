@@ -1,0 +1,38 @@
+; mkexe.idl -- v0.9 Jul 20 2008 -- Ivo Labbe ivo@ociw.edu
+; this program compiles the main idl routine and all depending routines, 
+; and merges the bytecode into an executable script which can be called 
+; from the command prompt. Arguments are passed on to the idl script
+; .reset_session
+
+; define name of the main program
+args=command_line_args(count=count)
+if count eq 0 then name='testarg' else name = args[0]
+
+; compile source code, resolve dependencies, and save to .sav file
+resolve_routine, name
+resolve_all
+save, /routines, file=name+'.sav'
+
+; write leader for executable script: includes the idl call
+tmp = name+'_tmp'
+openw, lun, tmp, /get_lun
+
+printf, lun, '#!/usr/bin/env bash'
+printf, lun, 'if  ! [ -d "$IDL_DIR" ] ; then printf "%s\n\n%s\n\n%s\n\n%s\n\n%s\n\n%s\n\n" "ERROR: IDL_DIR is not a valid directory. The proper IDL setup may be missing from your shell setup file." "For csh/tcsh: add the following to your .cshrc .tcshrc or .login" "source /IDL_INSTALLATION_PATH/bin/idl_setup" "For sh/bash: add the following to your .bashrc or .profile" "source /IDL_INSTALLATION_PATH/bin/idl_setup.bash" "If you do not know your IDL_INSTALLATION_PATH then contact your system administrator." ; exit ; fi'
+printf, lun, 'export IDL_PATH=".:+$IDL_DIR/lib"'
+printf, lun, 'echo $0 $* $IDL_DIR $IDL_PATH'
+printf, lun, '(dd if=$0 ibs=1 skip=XYZ > '+name+'.sav) >& /dev/null'
+printf, lun, 'if [ $# -eq 0 ] ; then $IDL_DIR/bin/idl -rt='+name+'.sav ; fi'
+printf, lun, 'if [ $# -gt 0 ] ; then $IDL_DIR/bin/idl -rt='+name+'.sav -args $* ; fi'
+printf, lun, '\rm '+name+'.sav ; exit'
+close, lun & free_lun, lun
+
+; calculate length of leader and merge with .sav
+spawn, "tr XYZ `wc -c < "+tmp+"` < "+tmp+" > "+name+" ; cat "+$
+       name+".sav >> "+name+" ; chmod +x "+name+" ; \rm "+name+".sav "+tmp
+
+; command line arguments are passed from the executable script to 
+; the main idl routine where they can be accessed with
+; IDL> args=command_line_args(count=count)
+
+exit
