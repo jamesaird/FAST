@@ -13,7 +13,6 @@ The confidence levels are calibrated using Monte Carlo simulations. The observed
 ## AGN templates
 
 FAST now includes the option to simulataneosly fit two components corresponding to the galaxy light (based on stellar population synthesis models) and an AGN. The AGN component is based on a set of empirically determined templates found in [Libraries/AGN](Libraries/AGN). The code considers all possible linear combinations of each AGN template with each galaxy template in the full stellar population grid, finding the combination that produces the minimum \chi^2 (the \chi^2 without any AGN component is also considered). See [example_agn](example_agn) for an example of the two-component fitting and the associated [parameter file](example_agn/fast.param) for a description of the additional parameters. See Appendix A of [Aird et al. (2017b)](https://arxiv.org/abs/1705.01132) for more details on the two-component fitting.  
-N.B. while 
 
 
 ## Download and using FAST
