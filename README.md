@@ -37,6 +37,9 @@ Alternatively, create an executable from the FAST/idl directory by running:
 idl mkexe.idl -arg fast
 ```
 
+Please note that you will also need to have installed IDLUTILS to get this version of FAST to work, available
+from: http://www.sdss3.org/dr8/software/idlutils.php
+
 If you use the code, please cite the following paper (the description of the code can be found in the Appendix):  
 [Kriek et al. (2009)](http://adsabs.harvard.edu/abs/2009ApJ...700..221K)
 
