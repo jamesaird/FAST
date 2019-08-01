@@ -39,7 +39,7 @@ print,"+      this paper!                                             +"
 print,"+                                                              +"
 print,"+            Updates by J. Aird, 2017 (v1.1).                  +"
 print,"+                 see Aird et al. 2017, MNRAS, 465,3390;       +"
-print,"+                     Aird et al. 2017b, arXiv:1705.01132      +"
+print,"+                     Aird et al. 2018, MNRAS, 474,1225;       +"
 print,"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 print,""
 
