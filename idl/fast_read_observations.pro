@@ -1,6 +1,7 @@
 FUNCTION fast_read_observations,lambda,CATALOG=CATALOG,SPECTRUM=SPECTRUM,$
                                 AB_ZEROPOINT=AB_ZEROPOINT,C_INTERVAL=$
-                                C_INTERVAL,NAME_ZPHOT=NAME_ZPHOT
+                                C_INTERVAL,NAME_ZPHOT=NAME_ZPHOT,$
+                                H_CAT=H_CAT
 
 
 if not KEYWORD_SET(NAME_ZPHOT) then name_zphot = 'z_phot'
