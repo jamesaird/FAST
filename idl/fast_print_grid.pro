@@ -57,6 +57,7 @@ if not KEYWORD_SET(file) then begin
       '-',A_V_MAX, ', in steps of',A_V_STEP
     print,format='(a2,a2,a11,f7.4,a2,f8.4,a13,f7.4)','','z:','',Z_MIN,$
       '-',Z_MAX, ', in steps of',Z_STEP
+
     if KEYWORD_SET(no_filt) then print,$
       format='(a2,a8,a4,'+strmid(strcompress(n_elements(no_filt)),1)+$
       '(i4))','','Filters:','',no_filt

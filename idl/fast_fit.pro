@@ -48,7 +48,7 @@ if KEYWORD_SET(x_err) then begin
    weight = TRANSPOSE(REFORM(REBIN(1./(eflux2*eflux2),n_fl,n_z,n_tau,n_metal,$
                                    n_age,n_Av),n_fl,n_z,n_tau,n_metal,n_age,$
                                    n_Av),[1,2,3,4,5,0])
-   wmm    = TOTAL((weight*model*model)[*,*,*,*,*,det],6)
+   wmm    = TOTAL((weight*model*model)[*,*,*,*,*,det],6) 
    for k=0,n_dat-1 do begin
       wfm = TEMPORARY(wfm) + weight(*,*,*,*,*,det(k)) $
             * TOTAL(flux(det(k))) * model[*,*,*,*,*,det(k)]
@@ -228,7 +228,9 @@ PRO fast_fit,id,flux,eflux,zspec,zphot,model,mass_model,sfr_model,z,$
   ;skip fitting if zphot=NAN: if .zout is given and both zph and zsp are 
   ;not defined (this is set in fast_read_observations)
   ;or if all bands have no detection
-  if not FINITE(zphot(0), /NAN) and n_det gt 0 then begin
+  ;; also skip if only have flux in one band - all models are equally
+  ;;                                           likely so require n_det>1
+  if not FINITE(zphot(0), /NAN) and n_det gt 1 then begin
      
      if not KEYWORD_SET(N_SIM) then N_SIM=0 
      if N_SIM ne 0 and not KEYWORD_SET(C_INTERVAL) then C_INTERVAL=68

@@ -44,7 +44,7 @@ FREE_LUN, unit
 if FILE_TEST(CATALOG+'.translate') then begin
    readcol,CATALOG+'.translate',tr1,tr2,format='(A,A)',/silent
    for i=0,n_elements(tr1)-1 do begin
-      rep_h = where(header eq tr1(i),n_rep_h)
+      rep_h = where(strcmp(header,tr1(i),/fold_case) eq 1,n_rep_h)
       if n_rep_h eq 1 then begin
          if (size(header))[0] eq 1 then begin
             header(rep_h) = tr2(i)
@@ -55,6 +55,7 @@ if FILE_TEST(CATALOG+'.translate') then begin
       endif
    endfor
 endif
+
 
 ;...determine filters from the header info
 if (size(header))[0] eq 0 then begin
@@ -77,7 +78,6 @@ end
 
 FUNCTION fast_read_filters,FILTERS_RES,lambda,CATALOG=CATALOG,$
                            SPECTRUM=SPECTRUM,no_filt=no_filt
-
 
 ;...read photometric filters
 ;   RECENT EDIT: added "or Keyowrd_set(no_filt)

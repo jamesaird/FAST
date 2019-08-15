@@ -41,7 +41,7 @@ if KEYWORD_SET(CATALOG) then begin
     fl_ind  = where(strmatch(h_cat(*,i_line),'F*[1234567890]') eq 1,n_filt)
     err_ind = where(strmatch(h_cat(*,i_line),'E*[1234567890]') eq 1)
     tot_ind = where(strmatch(h_cat(*,i_line),'TOT*[1234567890]') eq 1,n_tot)
-    zsp_ind = where(h_cat(*,i_line) eq 'z_spec',n_zsp)
+    zsp_ind = where(strmatch(h_cat(*,i_line),'z_spec',/fold_case),n_zsp)
 
     if n_filt eq 0 then begin
        print,'ERROR: no flux column identifications found '+$
