@@ -272,6 +272,7 @@ AVPEAK	       = 1.2			# peak A_V in 2nd order Gamma function prior
 #
 #----------------------------------------------------------------------
 FITAGN        = 1	              # 0/1 - perform 2-component fits with AGN templates
+AGNLIBRARY_DIR = '../AGNLibraries'
 AGNLIBRARY    = 'SWIRE+Silva'  	      # Name of the AGN library to use
 
 

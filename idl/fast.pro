@@ -252,7 +252,7 @@ if keyword_set(fitagn) then begin
       lum2fl = FAST_LUM2FLUX(z,H0=H0,lambda0=OMEGA_L,omega_m=$
                              OMEGA_M,AB_ZEROPOINT=AB_ZEROPOINT)
       ;; read the list of AGN templates
-      readcol,LIBRARY_DIR+'/AGN/'+AGNLIBRARY+'.list',AGNtempl_num,AGNtempl_name,format='L,A'
+      readcol,AGNLIBRARY_DIR+'/'+AGNLIBRARY+'.list',AGNtempl_num,AGNtempl_name,format='L,A'
       n_agn=n_elements(AGNtempl_name)
       n_z=n_elements(z)
       AGNgrid      = fltarr(n_z,n_agn,n_elements(lambda))
