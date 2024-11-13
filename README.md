@@ -27,7 +27,7 @@ The libraries have to be downloaded separately from the FAST-libraries submodule
 ```
 cd FAST
 git submodule init
-git submodule updata
+git submodule update
 ```
 WARNING - these files are large.
 
