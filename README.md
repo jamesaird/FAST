@@ -23,13 +23,14 @@ To download
 ```
 git clone https://github.com/jamesaird/FAST.git
 ```
-(The 
-[ised_del.lr](http://pepper.astro.berkeley.edu/~mariska/FAST_Libraries/ised_del.lr.tar.gz), 
-[ised_del.hr](http://pepper.astro.berkeley.edu/~mariska/FAST_Libraries/ised_del.hr.tar.gz), 
-[ised_tru.hr](http://pepper.astro.berkeley.edu/~mariska/FAST_Libraries/ised_tru.hr.tar.gz), 
-and 
-[ised_exp.hr](http://pepper.astro.berkeley.edu/~mariska/FAST_Libraries/ised_exp.hr.tar.gz)
-libraries have to be downloaded separately and should be stored in the FAST/Libraries directory).
+The libraries have to be downloaded separately from the FAST-libraries submodule. To do this, run:
+```
+cd FAST
+git submodule init
+git submodule updata
+```
+WARNING - these files are large.
+
 
 To run within IDL add the FAST/idl to your $IDL_PATH.  
 Alternatively, create an executable from the FAST/idl directory by running:
