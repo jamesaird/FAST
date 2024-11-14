@@ -63,7 +63,7 @@ end
 
 function noll,lambda,E_B,delta
 
-  if not keyword_set(E_B) or not keyword_set(delta) then begin
+  if n_elements(E_B) or n_elements(delta) then begin
      print,'ERROR:  you have to define "E_B" and "delta" in the '+$
            'parameter file for the Noll et al. dust law'
      exit
