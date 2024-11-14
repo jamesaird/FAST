@@ -23,12 +23,14 @@ To download
 ```
 git clone https://github.com/jamesaird/FAST.git
 ```
-The libraries have to be downloaded separately from the FAST-libraries submodule. To do this, run:
-```
-cd FAST
-git submodule init
-git submodule update
-```
+
+The 
+[ised_del.lr](https://cuillin.roe.ac.uk/~jaird/fast_libraries/ised_del.lr.tar.gz), 
+[ised_del.hr](https://cuillin.roe.ac.uk/~jaird/fast_libraries/ised_del.hr.tar.gz), 
+[ised_tru.hr](https://cuillin.roe.ac.uk/~jaird/fast_libraries/ised_tru.hr.tar.gz), 
+and 
+[ised_exp.hr](https://cuillin.roe.ac.uk/~jaird/fast_libraries/ised_exp.hr.tar.gz)
+libraries have to be downloaded separately and should be stored in the FAST/Libraries directory.
 WARNING - these files are large.
 
 
