@@ -55,3 +55,5 @@ Any questions and remarks are welcome, but please first check the documentation 
 
 Finally, please always check the output files. Does the fit look okay? Is the output redshift indeed similar to the input redshift, etc. While we tested FAST exhaustively, there might still be bugs. Please email if you do find any or wish to contribute to the project. Note that the use of FAST is at your own risk!
 
+You may also be interested in a C++ implementation, [FAST++](https://github.com/cschreib/fastpp)
+
